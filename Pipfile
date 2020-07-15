@@ -6,7 +6,9 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "*"
+django = "3.0.8"
+orjson = ">=3,<4"
+uvicorn = "*"
+nuitka = "*"
 
 [requires]
-python_version = "3.8"

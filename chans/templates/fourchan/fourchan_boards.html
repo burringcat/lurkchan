@@ -1,0 +1,8 @@
+{% extends "fourchan/base.html" %}
+{% block body %}
+    <ul>
+    {% for b in board_list %}
+        <li class="board-list"><a href="{% url "chan-board" chan_name b %}">{{ b }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
