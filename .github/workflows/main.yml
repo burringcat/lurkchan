@@ -21,14 +21,14 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version:  '3.8'
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
       run: |
-        apt update -y
-        apt upgrade -y
-        apt install python3-pip
-        pip3 install pipenv
+        python -m pip install pipenv
         cd $GITHUB_WORKSPACE
         pipenv install
         pipenv run python -m nuitka --follow-imports prod_run.py
